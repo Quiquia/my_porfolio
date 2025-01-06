@@ -1,0 +1,131 @@
+---
+import ArrowIcon from "../icons/Arrow.astro";
+import CodeIcon from "../icons/Code.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import MailIcon from "../icons/Mail.astro";
+import SendIcon from "../icons/Send.astro";
+import SuitcaseIcon from "../icons/Suitcase.astro";
+import UserIcon from "../icons/User.astro";
+import Badge from "./Badge.astro";
+import Contact from "./Contact.astro";
+import Experience from "./Experience.astro";
+import Project from "./Project.astro";
+import SectionContainer from "./SectionContainer.astro";
+import SocialPill from "./SocialPill.astro";
+---
+
+<div id="container" class="px-4">
+  <main class="snap-container">
+     
+    <SectionContainer class="pt-44 snap-section" id="about">
+      <img
+          src="/public/avatar.png"
+          alt="photo bequi"
+          class="size-[100px] md:size-[250px] rounded-full md:hidden"
+        />
+      <h1
+        class="text-white text-2xl md:text-5xl font-bold flex flex-col items-start md:items-center md:flex-row gap-4 pb-10"
+      >
+        ¡Hola, soy Vanessa!
+        <a
+          href="https://www.linkedin.com/in/vanessaquiquia/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap">
+        <span class="text-yellow-200 opacity-80">
+          Desarrolladora Web con 2 años de experiencia.
+        </span>
+        <span class="text-purple-400 opacity-80"> De Perú - Junin. </span>
+        <span class="text-white opacity-45">
+          Especializada en la creación de aplicaciones web dinámicas y
+          atractivas.
+        </span>
+      </h2>
+      <nav class="flex flex-wrap gap-x-7 gap-y-3 mt-8">
+        <SocialPill href="https://www.linkedin.com/in/vanessaquiquia/">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkendIn
+        </SocialPill>
+        <SocialPill href="https://github.com/Quiquia">
+          <GitHubIcon class="size-4 md:size-6" />
+          LinkendIn
+        </SocialPill>
+        <SocialPill href="mailto:vanebequi1994@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+          vanebequi1994@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+    <SectionContainer >
+      <h2 class="text-2xl font-semibold flex items-center gap-x-3 mb-6">
+        <UserIcon class="size-7" />
+        ¿Quién soy yo?
+      </h2>
+      <div class="flex gap-4">
+        <img
+          src="/public/avatar.png"
+          alt="photo bequi"
+          class="size-[100px] md:size-[250px] rounded-full hidden md:block"
+        />
+        <div class="flex gap-y-2 flex-col">
+          <h3 class="font-bold text-purple-400 opacity-50 text-2xl">
+            Yo soy Vanessa Quiquia,
+            <span> Desarrollador Web Full Stack </span>
+          </h3>
+          <p class="mb-4 text-xl font-normal text-gray-200 text-pretty pb-4">
+            Transformo conceptos en soluciones digitales, desarrollando tanto
+            aplicaciones web como programas de escritorio. Me dedico a cada fase
+            del desarrollo, garantizando que cada producto sea llevado de la
+            idea a la realidad con un enfoque en tecnología efectiva y
+            resultados tangibles.
+          </p>
+          <SocialPill href="https://drive.google.com/file/d/17mGorDqYqIDNJkQjzZW96_tBXzfG3Ift/view?usp=sharing" class="w-1/2">
+            Descargar CV
+             <ArrowIcon />
+          </SocialPill>
+        </div>
+      </div>
+    </SectionContainer>
+    <SectionContainer id="experience" class="snap-section">
+      <h2 class="text-2xl font-semibold flex items-center gap-x-3 mb-6">
+        <SuitcaseIcon class="size-7" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer id="projects">
+      <h2 class="text-2xl font-semibold flex items-center gap-x-3 mb-6">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Project />
+    </SectionContainer>
+    <SectionContainer id="contact">
+      <h2 class="text-2xl font-semibold flex items-center gap-x-3 mb-6">
+        <SendIcon class="size-7" />
+        Contacto
+      </h2>
+      <Contact/>
+    </SectionContainer>
+  </main>
+</div>
+
+<style>
+
+  /* .snap-container {
+    height: 100vh;
+    overflow: auto;  
+    scroll-snap-type: y mandatory;  
+  }*/
+
+  .snap-section {
+    top: 250px;
+  }
+
+</style>

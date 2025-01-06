@@ -1,0 +1,37 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Actualidad",
+    title: "Frontend Developer - Freelance",
+    description:
+      "Desarrollo de páginas web personalizadas utilizando HTML, CSS, React y Astro. Creación de plataformas educativas y sistemas de control de catálogo con Spring Boot y MySQL. Desarrollo de aplicaciones para la ubicación y reserva de canchas deportivas.",
+    link: "#",
+  },
+  {
+    date: "Julio 2023",
+    title: "Frontend Developer",
+    description:
+      "Encarga de creación e implementación de modulos de la plataforma educativa para el Centro de Idiomas San Marcos.",
+    link: "#",
+  },
+  {
+    date: "Enero 2023",
+    title: "Frontend Developer - Freelance",
+    description:
+      "Encargada de la creación, implementación y mantenimiento de nuevas landing pages y creación de plantillas web. Usando metodologías ágiles.",
+    link: "#",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 left-3">
+  {
+    EXPERIENCE.map((experienceItem) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experienceItem} />
+      </li>
+    ))
+  }
+</ol>

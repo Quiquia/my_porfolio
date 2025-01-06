@@ -1,0 +1,108 @@
+---
+import AstroIcon from "../icons/Astro.astro";
+import MySQLICon from "../icons/MySQL.astro";
+import NextJSIcon from "../icons/Nextsjs.astro";
+import ReactIcon from "../icons/React.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
+
+
+
+
+const TAGS = {
+  ASTRO: {
+    name: "Astro",
+    class: "bg-black text-white",
+    icon: AstroIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-black text-white",
+    icon: TailwindIcon,
+  },
+   NEXTSJS: {
+    name: "Nexts Js",
+    class: "bg-black text-white",
+    icon: NextJSIcon,
+  },
+   REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: ReactIcon,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-black text-white",
+    icon: MySQLICon,
+  },
+};
+
+const Projects = [
+  {
+    title: "Landing page - Super Rico Stafford",
+    description: "La página web de Super Rico Stafford es un sitio de menú digital que presenta su oferta gastronómica de manera clara y accesible.La navegación es sencilla, con menús desplegables y secciones específicas para cada tipo de platillo, optimizando la experiencia del usuario. ",
+    link: "https://github.comhttps://github.com/SuperRico2023/landing-page",
+    tags: [TAGS.NEXTSJS, TAGS.TAILWIND, TAGS.REACT ],
+    image: "../public/project_superrico.webp",
+  },
+  {
+    title: "Replica - Esland",
+    description: "He replicado la página de Esland utilizando Astro, centrándome en mejorar el rendimiento general y optimizar la estructura del sitio. Este proyecto busca ofrecer una experiencia de usuario más rápida y eficiente mediante el uso de tecnologías modernas y buenas prácticas de desarrollo web.",
+    link: "https://github.com/Quiquia/project-web-esland",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    image: "../public/project_esland.webp",
+  },
+  // {
+  //   title: "Project 3",
+  //   description: "This is a project",
+  //   link: "https://github.com",
+  //   tags: [TAGS.ASTRO, TAGS.TAILWIND],
+  //   image: "https://via.placeholder.com/300x200",
+  // },
+];
+---
+
+{
+  Projects.map(({ title, description, link, tags, image }) => (
+    <article class="rounded-lg  shadow-lg mb-10">
+      <h3 class="text-xl text-yellow-200 font-semibold mb-2">{title}</h3>
+      <p class="text-gray-600 mb-2">{description}</p>
+      <ul class="flex gap-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li class="">
+            <span class={`flex gap-x-2 items-center rounded-full text-xs py-1 px-2 border-2 border-white/10 ${tag.class}`}>
+              <tag.icon class="size-7" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        src={image}
+        alt={`Captura de pantall del proyecto ${title}`}
+        class="w-full mb-2 mx-auto"
+      />
+      <a
+      href={link}
+      class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+      target="_blank" 
+      rel="noopener"
+      >Ver Más 
+      {/* <svg
+        class="w-3 h-3 ms-2 rtl:rotate-180"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 14 10"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+      </svg> */}
+      </a>
+    
+    </article>
+  ))
+}

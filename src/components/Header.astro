@@ -1,0 +1,66 @@
+---
+import CodeIcon from "../icons/Code.astro";
+import SendIcon from "../icons/Send.astro";
+import SuitcaseIcon from "../icons/Suitcase.astro";
+import UserIcon from "../icons/User.astro";
+
+const NAVITEMS = [
+  { href: "#about", icon: UserIcon, label: "Sobre Mi" },
+  { href: "#experience", icon: SuitcaseIcon, label: "Experiencia" },
+  { href: "#projects", icon: CodeIcon, label: "Proyectos" },
+  { href: "#contact", icon: SendIcon, label: "Contacto" },
+];
+---
+
+<header id="header-nav"
+  class=" top-0 fixed px-4 py-5  z-10"
+>
+<div class="flex justify-center sm:justify-between xl:w-[1120px] w-full mx-auto items-center">
+
+  <a class="flex gap-2 items-center" href="/">
+    <img
+      class="rounded-full w-12 h-12 hidden sm:block"
+      src="../../public/logo_cat.png"
+      alt="bequidev photo"
+    />
+    <span class="text-white text-3xl font-bold hidden lg:block transition"
+      >bequidev</span
+    >
+  </a>
+  <nav class="flex flex-row gap-x-3 sm:gap-x-5 lg:gap-x-10 opacity-80">
+    {
+        NAVITEMS.map(({href, icon:Icon , label})=>
+            <a href={href} class="flex justify-center  gap-x-2 sm:gap-x-3
+             items-center text-[0.85rem] sm:text-xl 
+              hover:text-purple-400 transition">
+              <Icon class="size-6 "/>
+              {label}</a>
+        )
+    }
+    
+  </nav>
+</div>
+</header>
+
+<style>
+
+ /* -------------------- EFECTO DE BLUR-------------------- */
+      #header-nav {
+        animation: blur linear both;
+        animation-timeline: scroll();
+        animation-range: 0 150px;
+        width: 100%;
+        margin-inline: auto;
+      }
+
+      @keyframes blur {
+        to {
+          box-shadow:0 5px 5px -3px rgba(0,0,0,.30);
+          background: rgba(6, 6, 6, 0.5);
+          backdrop-filter: blur(10px);
+          width: full;
+         margin-inline: auto;
+        }
+      }
+
+</style>
